@@ -276,24 +276,59 @@
   </footer>
 
   <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  // 1) Set current year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Light / dark theme toggle
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
+  // 2) Theme toggle with localStorage
+  const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.classList.add("dark");
+  }
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark');
-    }
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    const theme = body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
 
-    toggleBtn.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      const theme = body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
+  // 3) Reveal-on-scroll for sections + cards
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".section, .card").forEach((el) => {
+    el.classList.add("reveal");
+    observer.observe(el);
+  });
+
+  // 4) Highlight nav link based on scroll position
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY + 120; // offset for header
+    sections.forEach((sec) => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute("id");
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+        });
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
+
