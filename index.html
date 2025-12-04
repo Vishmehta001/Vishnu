@@ -276,47 +276,57 @@
   </footer>
 
   <script>
-  // 1) Set current year
-  document.getElementById("year").textContent = new Date().getFullYear();
+  // 1) Current year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // 2) Theme toggle with localStorage
+  // 2) Theme toggle (default = dark)
   const toggleBtn = document.getElementById("theme-toggle");
   const body = document.body;
+
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
+  if (!savedTheme || savedTheme === "dark") {
     body.classList.add("dark");
   }
 
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-    const theme = body.classList.contains("dark") ? "dark" : "light";
-    localStorage.setItem("theme", theme);
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const theme = body.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    });
+  }
 
-  // 3) Reveal-on-scroll for sections + cards
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  // 3) Reveal on scroll (sections + cards)
+  const revealEls = document.querySelectorAll(".section, .card");
 
-  document.querySelectorAll(".section, .card").forEach((el) => {
-    el.classList.add("reveal");
-    observer.observe(el);
-  });
+  if ("IntersectionObserver" in window) {
+    revealEls.forEach((el) => el.classList.add("reveal"));
 
-  // 4) Highlight nav link based on scroll position
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    // fallback: show everything
+    revealEls.forEach((el) => el.classList.add("visible"));
+  }
+
+  // 4) Nav highlight based on scroll
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
 
   window.addEventListener("scroll", () => {
-    const scrollPos = window.scrollY + 120; // offset for header
+    const scrollPos = window.scrollY + 120;
     sections.forEach((sec) => {
       const top = sec.offsetTop;
       const height = sec.offsetHeight;
@@ -329,6 +339,8 @@
     });
   });
 </script>
+
 </body>
 </html>
+
 
