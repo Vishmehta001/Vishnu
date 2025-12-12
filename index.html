@@ -251,16 +251,20 @@
   </div>
 </section>
     <!--Community Section-->
-    <section id="community" class="section">
+<section id="community" class="section">
   <div class="container">
-    <h2>Community &amp; networks</h2>
+    <h2>Community & networks</h2>
     <p class="section-intro">
-      I don’t want to build things alone. I’m part of communities that mix tech, impact and good
-      people.
+      I don't want to build things alone. I'm part of communities that mix tech, impact and good people.
     </p>
-
-    <div class="grid-2">
-      <div class="card">
+    
+    <div class="community-grid">
+      <!-- beVisioneers -->
+      <div class="community-card bevisioneers">
+        <div class="community-badge">
+          <span class="badge-icon">🌱</span>
+          <span class="badge-label">Climate Tech</span>
+        </div>
         <h3>beVisioneers Mercedes-Benz Fellow</h3>
         <p class="meta">Cohort 3 · Stuttgart Hub</p>
         <ul class="list">
@@ -268,33 +272,60 @@
           <li>Learning impact frameworks, storytelling and how to pitch to real stakeholders.</li>
           <li>Part of a global group of young builders working on climate solutions.</li>
         </ul>
+        <div class="community-footer">
+          <span class="status-badge active">Active Fellow</span>
+        </div>
       </div>
-
-      <div class="card">
+      
+      <!-- 2hearts -->
+      <div class="community-card twohearts">
+        <div class="community-badge">
+          <span class="badge-icon">💙</span>
+          <span class="badge-label">Diversity</span>
+        </div>
         <h3>2hearts Community</h3>
-        <p class="meta">Tech, migration &amp; opportunity</p>
+        <p class="meta">Tech, migration & opportunity</p>
         <ul class="list">
           <li>Member of a network that supports diverse tech talent in Germany.</li>
           <li>Using it to find mentors, role models and a more honest view of industry.</li>
         </ul>
+        <div class="community-footer">
+          <span class="status-badge member">Member</span>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Campus Founders &amp; Startup Ecosystem</h3>
+      
+      <!-- Campus Founders -->
+      <div class="community-card campus-founders">
+        <div class="community-badge">
+          <span class="badge-icon">🚀</span>
+          <span class="badge-label">Startups</span>
+        </div>
+        <h3>Campus Founders & Startup Ecosystem</h3>
         <p class="meta">Heilbronn</p>
         <ul class="list">
           <li>Joining events, hackathons and workshops around startups and innovation.</li>
           <li>Testing ideas quickly and getting feedback from founders and coaches.</li>
         </ul>
+        <div class="community-footer">
+          <span class="status-badge participant">Participant</span>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>TUM Venture Labs &amp; TUM Communities</h3>
-        <p class="meta">Student &amp; tech tracks</p>
+      
+      <!-- TUM -->
+      <div class="community-card tum">
+        <div class="community-badge">
+          <span class="badge-icon">🎓</span>
+          <span class="badge-label">Academic</span>
+        </div>
+        <h3>TUM Venture Labs & TUM Communities</h3>
+        <p class="meta">Student & tech tracks</p>
         <ul class="list">
-          <li>Plugged into TUM’s ecosystem for AI, digital and entrepreneurial projects.</li>
+          <li>Plugged into TUM's ecosystem for AI, digital and entrepreneurial projects.</li>
           <li>Using it to understand how research, industry and student teams connect.</li>
         </ul>
+        <div class="community-footer">
+          <span class="status-badge student">Student</span>
+        </div>
       </div>
     </div>
   </div>
@@ -356,25 +387,55 @@
   </div>
 </section>
       <!-- GITHUB STATS -->
-  <section id="github-stats" class="section">
-    <div class="container">
-      <h2>GitHub Activity</h2>
-      <p class="section-intro">
-        My coding journey in numbers – building, learning and shipping projects.
-      </p>
-      <div class="github-stats-container">
-        <div class="stat-card">
-          <img src="https://github-readme-stats.vercel.app/api?username=Vishmehta001&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=22d3ee&icon_color=4f46e5&text_color=e5e7eb" alt="Vishnu's GitHub Stats" loading="lazy" />
-        </div>
-        <div class="stat-card">
-          <img src="https://github-readme-streak-stats.herokuapp.com/?user=Vishmehta001&theme=tokyonight&hide_border=true&background=0d1117&ring=22d3ee&fire=4f46e5&currStreakLabel=22d3ee" alt="Vishnu's GitHub Streak" loading="lazy" />
-        </div>
-        <div class="stat-card stat-card-wide">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vishmehta001&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=22d3ee&text_color=e5e7eb" alt="Top Languages" loading="lazy" />
-        </div>
+<section id="github-stats" class="section">
+  <div class="container">
+    <h2>GitHub Activity</h2>
+    <p class="section-intro">
+      My coding journey in numbers – building, learning and shipping projects.
+    </p>
+    
+    <!-- Stats Grid with Icons -->
+    <div class="stats-grid">
+      <!-- Contribution Stats with Icon Header -->
+      <div class="stat-card-enhanced">
+        <div class="stat-icon">📊</div>
+        <h3>Contributions</h3>
+        <img src="https://github-readme-stats.vercel.app/api?username=Vishmehta001&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=22d3ee&icon_color=4f46e5&text_color=e5e7eb&count_private=true" alt="GitHub Stats" loading="lazy" />
+      </div>
+      
+      <!-- Streak Stats with Fire Icon -->
+      <div class="stat-card-enhanced">
+        <div class="stat-icon">🔥</div>
+        <h3>Commit Streak</h3>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=Vishmehta001&theme=tokyonight&hide_border=true&background=0d1117&ring=22d3ee&fire=4f46e5&currStreakLabel=22d3ee" alt="GitHub Streak" loading="lazy" />
+      </div>
+      
+      <!-- Top Languages with Code Icon -->
+      <div class="stat-card-enhanced stat-card-wide">
+        <div class="stat-icon">💻</div>
+        <h3>Top Languages</h3>
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vishmehta001&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=22d3ee&text_color=e5e7eb&langs_count=6" alt="Top Languages" loading="lazy" />
       </div>
     </div>
-  </section>
+    
+    <!-- Quick Stats Row -->
+    <div class="quick-stats">
+      <div class="quick-stat">
+        <span class="stat-number" id="repos-count">—</span>
+        <span class="stat-label">Public Repos</span>
+      </div>
+      <div class="quick-stat">
+        <span class="stat-number">57+</span>
+        <span class="stat-label">Contributions (2025)</span>
+      </div>
+      <div class="quick-stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Hackathon Projects</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- CONTACT -->
@@ -478,6 +539,7 @@
 
 </body>
 </html>
+
 
 
 
