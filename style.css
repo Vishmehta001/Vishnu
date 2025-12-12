@@ -148,6 +148,46 @@ p {
 .header-meta li {
   color: var(--muted);
 }
+/* GITHUB STATS */
+.github-stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: radial-gradient(circle at top left, var(--accent-soft), var(--card));
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  padding: 1.2rem;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 65px rgba(34, 211, 238, 0.4);
+}
+
+.stat-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.stat-card-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .stat-card-wide {
+    grid-column: span 1;
+  }
+}
+
 
 /* NAV BAR – high contrast in both themes */
 
@@ -388,3 +428,4 @@ body.dark .pill-list li {
     padding: 3rem 0;
   }
 }
+
