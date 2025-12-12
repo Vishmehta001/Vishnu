@@ -924,3 +924,60 @@ body.dark .pill-list li {
     margin: 2rem 0;
   }
 }
+
+  /* MODERN GITHUB DASHBOARD */
+.github-dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin: 3rem 0;
+  align-items: start;
+}
+
+.dashboard-main {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #0d1117;
+  box-shadow: 0 20px 60px rgba(34, 211, 238, 0.3), 
+              0 0 0 1px rgba(56, 189, 248, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-main:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(34, 211, 238, 0.5),
+              0 0 0 2px rgba(56, 189, 248, 0.4);
+}
+
+.dashboard-side {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #0d1117;
+  box-shadow: 0 20px 60px rgba(79, 70, 229, 0.3),
+              0 0 0 1px rgba(79, 70, 229, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-side:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(79, 70, 229, 0.5),
+              0 0 0 2px rgba(79, 70, 229, 0.4);
+}
+
+.dashboard-main img,
+.dashboard-side img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .github-dashboard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
