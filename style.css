@@ -871,3 +871,56 @@ body.dark .pill-list li {
   }
 }
 
+
+
+
+/* UNIFIED GITHUB STATS CARD */
+.github-stats-unified {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.stat-section {
+  margin: 0;
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.stat-header .stat-icon {
+  font-size: 1.8rem;
+}
+
+.stat-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.stat-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.stat-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 2.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .github-stats-unified {
+    padding: 1.5rem;
+  }
+  .stat-divider {
+    margin: 2rem 0;
+  }
+}
