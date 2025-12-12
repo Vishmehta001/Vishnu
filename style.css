@@ -927,8 +927,8 @@ body.dark .pill-list li {
 
   /* MODERN GITHUB DASHBOARD */
 .github-dashboard {
-    max-width: 700px;
-  margin: 3rem auto;
+  width: 100%;
+    margin: 3rem auto;
 
 .dashboard-main {
   position: relative;
@@ -955,5 +955,6 @@ body.dark .pill-list li {
 }
 
   
+
 
 
